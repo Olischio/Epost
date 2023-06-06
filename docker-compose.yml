@@ -1,0 +1,9 @@
+services:
+  flask-server:
+    container_name: flask-server
+    build:
+      dockerfile: dockerfile
+    environment:
+      SMTP_PASSWORD: $SMTP_PASSWORD 
+    ports:
+      - 5010:5000

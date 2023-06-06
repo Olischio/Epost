@@ -1,0 +1,2 @@
+#Ignore Environment files that contains passwords
+.env

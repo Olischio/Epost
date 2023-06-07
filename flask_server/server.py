@@ -1,4 +1,4 @@
-from flask import Flask, send_file, render_template
+from flask import Flask, request, send_file, render_template
 from datetime import datetime
 import os
 import smtplib
@@ -7,6 +7,52 @@ from email.mime.text import MIMEText
 
 
 app = Flask(__name__)
+
+#nytt
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
+#Dette er en mega giga ultratest
+@app.route('/form')
+def form():
+    return render_template('form.html')
+
+@app.route('/submit-form', methods=['POST'])
+def submit_form():
+    email = request.form['email']
+    subject = request.form['subject']
+    return f'Email: {email}, Subject: {subject}'
+#slutt på mega giga ultratest
+
+
+# @app.route('/submit-form', methods=['POST'])
+# def submit_form():
+#     # Do something with the form data
+#     return 'Form submitted successfully'
+
+# @app.route('/submit-form', methods=['GET', 'POST'])
+# def submit_form():
+#     if request.method == 'POST':
+#         # Do something with the form data
+#         return 'Form submitted successfully'
+#     else:
+#         # Render the form template
+#         return render_template('form.html')
+
+# @app.route('/submit-form')
+# def home():
+#     return render_template('submit-form.html')
+
+
+# @app.route('/submit-form', methods=['POST'])
+# def submit_form():
+#     name = request.form['name']
+#     email = request.form['email']
+#     # Do something with the form data
+#     return 'Form submitted successfully'
+
+#NYTT
 
 @app.route('/somepicture.jpeg')
 def serve_image():
@@ -76,6 +122,9 @@ def send_email():
         return 'Email sent successfully!'
     except Exception as e:
         return f'Error sending email: {str(e)}'
+    
+
+    
 
 
 

@@ -1,3 +1,7 @@
+
+# Denne filen er definisjonen på hvordan docker imaget blir bygd
+
+
 # Use an official Python runtime as the base image
 #DOCKER MENER JEG SKAL BRUKE DENNE
 FROM python:3.9-slim

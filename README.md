@@ -1,5 +1,14 @@
 # Epost
 
+## Tag Image 
+
+docker tag epost-flask-server:latest olischio/containerrepo:latest
+docker push olischio/containerrepo:latest
+
+docker tag epost-flask-server:latest olischio/epost-flask-server:latest
+docker push olischio/epost-flask-server:latest
+
+
 ## Tracking Pixel For Epost
 
 ##Installere Flask

@@ -9,9 +9,9 @@ from email.mime.text import MIMEText
 app = Flask(__name__)
 
 #nytt
-@app.route('/home')
+@app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 #Dette er en mega giga ultratest
 @app.route('/form')
@@ -22,6 +22,9 @@ def form():
 def submit_form():
     email = request.form['email']
     subject = request.form['subject']
+
+    send_email(email, subject)
+
     return f'Email: {email}, Subject: {subject}'
 #slutt på mega giga ultratest
 
@@ -76,14 +79,15 @@ def serve_image():
 @app.route('/log')
 def show_log():
     with open('myfile.txt', 'r') as file:
+        # readlines
         log_content = file.read()
     return render_template('log.html', log_content=log_content)
 
-@app.route('/send_email')
-def send_email():
+# @app.route('/send_email')
+def send_email(receiver_email, subject):
     # Email configuration
     sender_email = 'oliver.schiott@outlook.com'
-    receiver_email = 'oliver.schiott@outlook.com'
+    # receiver_email = 'oliver.schiott@outlook.com'
     smtp_server = 'smtp-mail.outlook.com'
     smtp_port = 587
     smtp_username = 'oliver.schiott@outlook.com'
@@ -91,7 +95,7 @@ def send_email():
 
     # Create a multi-part email message
     message = MIMEMultipart('alternative')
-    message['Subject'] = 'HTML Email Example'
+    message['Subject'] = subject
     message['From'] = sender_email
     message['To'] = receiver_email
 
@@ -124,16 +128,6 @@ def send_email():
         return f'Error sending email: {str(e)}'
     
 
-    
-
-
-
 if __name__ == '__main__':
     app.run()
-
-
-
-
-
-
 

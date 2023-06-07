@@ -1,3 +1,6 @@
+
+# Denne filen definerer hvordan docker skal lage en eller fler container(e)
+
 services:
   flask-server:
     container_name: flask-server
@@ -7,3 +10,11 @@ services:
       SMTP_PASSWORD: $SMTP_PASSWORD 
     ports:
       - 5010:5000
+  
+  # flask-server_2:
+  #   container_name: flask-server-2
+  #   image: olischio/containerrepo:latest
+  #   environment:
+  #     SMTP_PASSWORD: $SMTP_PASSWORD
+  #   ports:
+  #     - 5020:5000

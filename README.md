@@ -21,7 +21,8 @@ docker push olischio/epost-flask-server:latest
   Opprett et nytt app-passord
   Fjern eksisterende app-passord 
   (KAN BARE VISES EN GANG LAGRE PASSORDET)
-  
+
+
 
 
   

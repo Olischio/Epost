@@ -68,7 +68,7 @@ def serve_image():
 
     # Open the file in append mode and write the content
     with open('myfile.txt', 'a') as file:
-        file.write(f"{current_time} - Someone downloaded somepicture.png.\n")
+        file.write(f"{current_time} - Someone downloaded somepicture..\n")
 
     print("Ferdig med å skrive til fil!")
 

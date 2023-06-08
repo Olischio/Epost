@@ -108,7 +108,9 @@ def send_email(receiver_email, subject):
         
         <p>This is the tracking image:</p>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOuu3daYO60-FJuk8cTU1aSZCa9EvggUjzbQ&usqp=CAU">
-        
+        <p>This email includes tracking technology to gather statistical data on delivery and open rates. By opening this email, you consent to the collection and analysis of your interaction with the message. We use this information to enhance our communication and provide you with tailored content.
+
+        If you wish to opt out of tracking, you can unsubscribe here. Disabling the loading of external images in your email client settings will also prevent tracking.</p>
     </body>
     </html>
     '''

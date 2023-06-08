@@ -14,18 +14,18 @@ def home():
     return render_template('index.html')
 
 #Dette er en mega giga ultratest
-@app.route('/form')
+@app.route('/send-email')
 def form():
-    return render_template('form.html')
+    return render_template('send-email.html')
 
 @app.route('/submit-form', methods=['POST'])
 def submit_form():
     email = request.form['email']
     subject = request.form['subject']
 
-    send_email(email, subject)
+    result = send_email(email, subject)
 
-    return f'Email: {email}, Subject: {subject}'
+    return f'Email: {email}, Subject: {subject} {result}'
 #slutt på mega giga ultratest
 
 
@@ -83,7 +83,7 @@ def show_log():
         log_content = file.read()
     return render_template('log.html', log_content=log_content)
 
-# @app.route('/send_email')
+
 def send_email(receiver_email, subject):
     # Email configuration
     sender_email = 'oliver.schiott@outlook.com'

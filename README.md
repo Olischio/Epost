@@ -1,13 +1,21 @@
 # Epost
 
-## Tag Image 
+## Tag and push
 
-docker tag epost-flask-server:latest olischio/containerrepo:latest
-docker push olischio/containerrepo:latest
+Utfør i rekkefølge, husk å endre versjonstall (1.0.0)
+Husk å docker compose før du gjør dette
 
-docker tag epost-flask-server:latest olischio/epost-flask-server:latest
-docker push olischio/epost-flask-server:latest
+```bash
+docker tag epost-flask-server:latest olischio/email-tracker:1.0.0
+docker push olischio/email-tracker:1.0.0
+```
 
+Dette skal velges i Azure image, husk å endre versjonstall
+olischio/email-tracker:1.0.0
+Login server
+index.docker.io
+
+Token - dckr_pat_jAoBj0ZOEUw8eo3oyVyW9JLy8LU
 
 ## Tracking Pixel For Epost
 

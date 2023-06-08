@@ -7,12 +7,12 @@ Husk å docker compose før du gjør dette
 Du må være logget inn i Docker Desktop
 
 ```bash
-docker tag epost-flask-server:latest olischio/email-tracker:1.0.2
-docker push olischio/email-tracker:1.0.2
+docker tag epost-flask-server:latest olischio/email-tracker:1.0.4
+docker push olischio/email-tracker:1.0.4
 ```
 
 Dette skal velges i Azure image, husk å endre versjonstall
-olischio/email-tracker:1.0.2
+olischio/email-tracker:1.0.4
 Login server
 index.docker.io
 

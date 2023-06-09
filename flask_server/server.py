@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file, render_template
+from flask import Flask, request, send_file, render_template, url_for
 from datetime import datetime
 import os
 import smtplib
@@ -26,62 +26,46 @@ def submit_form():
     result = send_email(email, subject)
 
     return f'Email: {email}, Subject: {subject} {result}'
-#slutt på mega giga ultratest
-
-
-# @app.route('/submit-form', methods=['POST'])
-# def submit_form():
-#     # Do something with the form data
-#     return 'Form submitted successfully'
-
-# @app.route('/submit-form', methods=['GET', 'POST'])
-# def submit_form():
-#     if request.method == 'POST':
-#         # Do something with the form data
-#         return 'Form submitted successfully'
-#     else:
-#         # Render the form template
-#         return render_template('form.html')
-
-# @app.route('/submit-form')
-# def home():
-#     return render_template('submit-form.html')
-
-
-# @app.route('/submit-form', methods=['POST'])
-# def submit_form():
-#     name = request.form['name']
-#     email = request.form['email']
-#     # Do something with the form data
-#     return 'Form submitted successfully'
-
-#NYTT
 
 @app.route('/somepicture.jpeg')
 def serve_image():
+
     # Perform any desired function here
     # For example, print a message when the image is served
     print("Image served!")
 
+    # Her definerer jeg query argumenter fra linken
+    email = request.args.get("email",'')
+    subject = request.args.get("subject",'')
+
     # Get the current timestamp
     current_time = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
 
+    # Ny logg melding basert på input 
+    # log_message = f"{current_time}|email={email}|subject={subject}\n"
+
     # Open the file in append mode and write the content
     with open('myfile.txt', 'a') as file:
-        file.write(f"{current_time} - Someone downloaded somepicture..\n")
+        # file.write(f"{current_time} - Someone downloaded somepicture..\n")
+        file.write(f"{current_time}|{email}|{subject} \n")
 
     print("Ferdig med å skrive til fil!")
 
-    #.jpeg er viktig at samsvarer med filnavnet
     # Return the image file to be served
-    return send_file('image.jpeg', mimetype='image/png')
+    return send_file('image.jpeg', mimetype='image/jpeg')
 
 @app.route('/log')
 def show_log():
+    # log_entries = []
     with open('myfile.txt', 'r') as file:
-        # readlines
-        log_content = file.read()
+        log_content = file.readlines()
+        # for line in lines:
+        #     log_entries.append(line.strip().split('|')) 
     return render_template('log.html', log_content=log_content)
+        
+    #     # readlines
+    #     log_content = file.read()
+    # return render_template('log.html', log_content=log_content)
 
 
 def send_email(receiver_email, subject):
@@ -99,7 +83,9 @@ def send_email(receiver_email, subject):
     message['From'] = sender_email
     message['To'] = receiver_email
 
-    image_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOuu3daYO60-FJuk8cTU1aSZCa9EvggUjzbQ&usqp=CAU"
+    image_url = url_for('serve_image', _external=True)
+
+    # image_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOuu3daYO60-FJuk8cTU1aSZCa9EvggUjzbQ&usqp=CAU"
 
     # HTML content of the email
     html_content = '''

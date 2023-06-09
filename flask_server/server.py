@@ -83,9 +83,11 @@ def send_email(receiver_email, subject):
     message['From'] = sender_email
     message['To'] = receiver_email
 
+    # image_url = url_for('serve_image', _external=True)
     image_url = url_for('serve_image', _external=True)
-
-    # image_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOuu3daYO60-FJuk8cTU1aSZCa9EvggUjzbQ&usqp=CAU"
+    print(image_url)
+    image_url =f'{image_url}?email={receiver_email}&subject{subject}'
+    print(image_url)
 
     # HTML content of the email
     html_content = '''

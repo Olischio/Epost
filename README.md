@@ -14,7 +14,7 @@ docker push olischio/email-tracker:1.0.4
 ```
 
 Dette skal velges i Azure image, husk å endre versjonstall
-olischio/email-tracker:1.0.4
+olischio/email-tracker:1.0.5
 Login server
 index.docker.io
 

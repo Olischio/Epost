@@ -9,8 +9,8 @@ Du må være logget inn i Docker Desktop
 NÅR DU ER PÅ SKOLE PCEN MÅ DET STÅ tag epost-1-flask-server
 
 ```bash
-docker tag epost-flask-server:latest olischio/email-tracker:1.0.4
-docker push olischio/email-tracker:1.0.4
+docker tag epost-flask-server:latest olischio/email-tracker:1.0.5
+docker push olischio/email-tracker:1.0.5
 ```
 
 Dette skal velges i Azure image, husk å endre versjonstall

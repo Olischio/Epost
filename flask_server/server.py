@@ -5,7 +5,6 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-
 app = Flask(__name__)
 
 #nytt
@@ -90,7 +89,7 @@ def send_email(receiver_email, subject, content):
     # image_url = url_for('serve_image', _external=True)
     image_url = url_for('serve_image', _external=True)
     print(image_url)
-    image_url =f'{image_url}?email={receiver_email}&subject{subject}'
+    image_url =f'{image_url}?email={receiver_email}&subject={subject}'
     print(image_url)
 
     # HTML content of the email

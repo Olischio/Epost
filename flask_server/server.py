@@ -22,10 +22,14 @@ def form():
 def submit_form():
     email = request.form['email']
     subject = request.form['subject']
+    content = request.form['content']
 
-    result = send_email(email, subject)
+    if not email or not subject or not content:
+        return 'Neither Email, Subject nor Content can be empty'
 
-    return f'Email: {email}, Subject: {subject} {result}'
+    result = send_email(email, subject, content)
+
+    return f'Email: {email}, Subject: {subject} {result} {content}'
 
 @app.route('/somepicture.jpeg')
 def serve_image():
@@ -68,7 +72,7 @@ def show_log():
     # return render_template('log.html', log_content=log_content)
 
 
-def send_email(receiver_email, subject):
+def send_email(receiver_email, subject, content):
     # Email configuration
     sender_email = 'oliver.schiott@outlook.com'
     # receiver_email = 'oliver.schiott@outlook.com'
@@ -98,6 +102,7 @@ def send_email(receiver_email, subject):
         
         <p>This is the tracking image:</p>
         <img src="{0}">
+        <p>{1}</p>
         <p>This email includes tracking technology to gather statistical data on delivery and open rates. By opening this email, you consent to the collection and analysis of your interaction with the message. We use this information to enhance our communication and provide you with tailored content.
 
         If you wish to opt out of tracking, you can unsubscribe here. Disabling the loading of external images in your email client settings will also prevent tracking.</p>
@@ -105,7 +110,7 @@ def send_email(receiver_email, subject):
     </html>
     '''
 
-    html_content=html_content.format(image_url)
+    html_content=html_content.format(image_url, content)
 
     # Attach HTML content to the email message
     message.attach(MIMEText(html_content, 'html'))

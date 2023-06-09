@@ -5,8 +5,24 @@
 </head>
 <body>
     <h1>Log</h1>
-    <a href="/">Home</a>
-    <br>
-    <pre>{{ log_content }}</pre>
+    <table>
+        <thead>
+            <tr>
+                <th>Tidspunkt</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for line in log_content %}
+                <tr>
+                    {% for item in line.split('|') %}
+                        <td>{{ item }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>

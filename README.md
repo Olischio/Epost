@@ -20,6 +20,9 @@ index.docker.io
 
 Token - dckr_pat_jAoBj0ZOEUw8eo3oyVyW9JLy8LU
 
+Når du setter opp Azure container må du sette opp port 5000 tcp og fjerne den gamle
+Sett opp Env variabler i Azure
+
 ## Tracking Pixel For Epost
 
 ##Installere Flask

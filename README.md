@@ -18,6 +18,7 @@ olischio/email-tracker:1.0.5
 Login server
 index.docker.io
 
+Token har read only access til docker hub kontoen min så det er for mye styr å fjerne den herifra
 Token - dckr_pat_jAoBj0ZOEUw8eo3oyVyW9JLy8LU
 
 Når du setter opp Azure container må du sette opp port 5000 tcp og fjerne den gamle

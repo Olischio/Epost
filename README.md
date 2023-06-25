@@ -1,5 +1,20 @@
 # Epost
 
+Denne oppgaven var Eksamensoppgaven i IT på F21 2023
+
+Jeg forsøkte å vise kompetanse innen flere fagområder.
+Dette prosjektet inneholder:
+
+* Flask python server
+* Docker Container
+* Docker Hub
+* Dockerfile
+* Docker Compose
+
+* Azure webhosting (container services)
+
+
+
 ## Tag and push
 
 Utfør i rekkefølge, husk å endre versjonstall (1.0.0)

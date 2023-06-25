@@ -1,6 +1,6 @@
 # Epost
 
-Denne oppgaven var Eksamensoppgaven i IT på F21 2023
+Denne oppgaven var Eksamensoppgaven min i IT på F21 2023
 
 Jeg forsøkte å vise kompetanse innen flere fagområder.
 Dette prosjektet inneholder:
@@ -13,7 +13,11 @@ Dette prosjektet inneholder:
 
 * Azure webhosting (container services)
 
+## Hvordan sette opp en container i Azure Container Instances
 
+![azure image 1](./readme_images/azure1.png)
+![azure image 2](./readme_images/azure2.png)
+![azure image 3](./readme_images/azure2.png)
 
 ## Tag and push
 

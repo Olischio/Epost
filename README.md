@@ -1,17 +1,23 @@
 # Epost
 
 Denne oppgaven var Eksamensoppgaven min i IT på F21 2023
+Eksamensoppgave: "Ta utgangspunkt i et IT-Prosjekt du har hatt i løpået av skoleåret og videreutvikle dette."
 
-Jeg forsøkte å vise kompetanse innen flere fagområder.
-Dette prosjektet inneholder:
+Jeg forsøkte å vise kompetanse innen flere fagområder!
 
-* Flask python server
+* Flask Webserver
 * Docker Container
 * Docker Hub
 * Dockerfile
 * Docker Compose
 
 * Azure webhosting (container services)
+
+## Hva var målet?
+
+Målet med oppgaven min var å lage en webserver som kan sende Mail og embede ett bilde (tracking image) slik at når noen åpner mailen vil min webserver få en GET request og jeg kan registrere at noen har åpnet mailen min.
+
+For at get requesten skal kunne nås fra internett valgte jeg å hoste Webserveren på Azure Container Instances.
 
 ## Hvordan sette opp en container i Azure Container Instances
 
@@ -42,14 +48,6 @@ Token - dckr_pat_jAoBj0ZOEUw8eo3oyVyW9JLy8LU
 
 Når du setter opp Azure container må du sette opp port 5000 tcp og fjerne den gamle
 Sett opp Env variabler i Azure
-
-## Tracking Pixel For Epost
-
-##Installere Flask
-
-*Serveren skal hoste ett bilde av en tracking pixel (eller annet bilde slik at man kan se det)
-*Serveren skal ha: Muligheten til å serve ett bilde, Sende en Epost ved bruk av Python (outlook har ekstrapassord for dette)
-  *App-passord
 
 
 

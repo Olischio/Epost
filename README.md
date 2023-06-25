@@ -27,23 +27,23 @@ For at get requesten skal kunne nås fra internett valgte jeg å hoste Webserver
 
 ## Tag and push
 
+For å laste opp ett nytt docker image til docker hub må man først bygge imaget, tagge og så pushe imaget til docker hub.
+
 Utfør i rekkefølge, husk å endre versjonstall (1.0.0)
 Husk å docker compose før du gjør dette
 Du må være logget inn i Docker Desktop
-
-NÅR DU ER PÅ SKOLE PCEN MÅ DET STÅ tag epost-1-flask-server
 
 ```bash
 docker tag epost-flask-server:latest olischio/email-tracker:1.0.5
 docker push olischio/email-tracker:1.0.5
 ```
 
-Dette skal velges i Azure image, husk å endre versjonstall
+Dette skal velges i Azure Container Instances på image, husk å endre versjonstall
 olischio/email-tracker:1.0.5
 Login server
 index.docker.io
 
-Token har read only access til docker hub kontoen min så det er for mye styr å fjerne den herifra
+Token har read only access til docker hub kontoen min, men jeg ønsket å teste med ett privat Docker-Image Repository.
 Token - dckr_pat_jAoBj0ZOEUw8eo3oyVyW9JLy8LU
 
 Når du setter opp Azure container må du sette opp port 5000 tcp og fjerne den gamle

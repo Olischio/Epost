@@ -17,7 +17,7 @@ Dette prosjektet inneholder:
 
 ![azure image 1](./readme_images/azure1.png)
 ![azure image 2](./readme_images/azure2.png)
-![azure image 3](./readme_images/azure2.png)
+![azure image 3](./readme_images/azure3.png)
 
 ## Tag and push
 

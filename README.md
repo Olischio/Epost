@@ -1,6 +1,6 @@
 # Epost
 
-Denne oppgaven var Eksamensoppgaven min i IT på F21 2023
+Denne oppgaven var Eksamensoppgaven min i IT på F21 2023  
 Eksamensoppgave: "Ta utgangspunkt i et IT-Prosjekt du har hatt i løpået av skoleåret og videreutvikle dette."
 
 Jeg forsøkte å vise kompetanse innen flere fagområder!

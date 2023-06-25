@@ -25,11 +25,11 @@ For at get requesten skal kunne nås fra internett valgte jeg å hoste Webserver
 ![azure image 2](./readme_images/azure2.png)
 ![azure image 3](./readme_images/azure3.png)
 
-## Tag and push
+## Hvordan publisere Docker Image til Docker Hub
 
 For å laste opp ett nytt docker image til docker hub må man først bygge imaget, tagge og så pushe imaget til docker hub.
 
-Utfør i rekkefølge, husk å endre versjonstall (1.0.0)
+Utfør i rekkefølge, husk å endre versjonstall (1.0.5)
 Husk å docker compose før du gjør dette
 Du må være logget inn i Docker Desktop
 

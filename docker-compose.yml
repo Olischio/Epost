@@ -10,11 +10,4 @@ services:
       SMTP_PASSWORD: $SMTP_PASSWORD 
     ports:
       - 5000:5000
-  
-  # flask-server_2:
-  #   container_name: flask-server-2
-  #   image: olischio/containerrepo:latest
-  #   environment:
-  #     SMTP_PASSWORD: $SMTP_PASSWORD
-  #   ports:
-  #     - 5020:5000
+      

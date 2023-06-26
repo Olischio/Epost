@@ -29,5 +29,12 @@ jobs:
       - name: Build docker image
         run: docker build -t ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_HUB_REPO }}:${{ github.run_number }} .
 
+      - name: Tag with latest
+        run: docker tag ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_HUB_REPO }}:${{ github.run_number }} ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_HUB_REPO }}:latest
+
       - name: Publish docker image
         run: docker push ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_HUB_REPO }}:${{ github.run_number }}
+
+      - name: Publish docker image latest
+        run: docker push ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_HUB_REPO }}:latest
+      

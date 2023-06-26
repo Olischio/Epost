@@ -27,4 +27,4 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build docker image
-        run: docker build -t ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_HUB_REPO }}:${{ env.DOCKER_IMAGE_NAME }}
+        run: docker build -t ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_HUB_REPO }}:${{ env.DOCKER_IMAGE_NAME }} .
